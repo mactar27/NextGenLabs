@@ -9,7 +9,7 @@ export function Logo({ className = "", showText = false }: { className?: string;
         alt="NextGen Labs logo"
         width={300}
         height={300}
-        className="h-16 sm:h-20 w-auto object-contain"
+        className="h-16 sm:h-20 w-auto object-contain dark:brightness-0 dark:invert"
         priority
       />
       {showText && (
