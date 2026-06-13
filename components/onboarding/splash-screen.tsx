@@ -8,10 +8,7 @@ export function SplashScreen() {
   const { t } = useLanguage()
 
   return (
-    <div className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-navy">
-      <div aria-hidden className="absolute inset-0 hero-video-bg opacity-80" />
-      <div aria-hidden className="absolute inset-0 bg-black/40" />
-
+    <div className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden bg-white">
       <motion.div
         initial={{ opacity: 0, scale: 0.85 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -36,7 +33,7 @@ export function SplashScreen() {
           initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4, duration: 0.5 }}
-          className="max-w-xs text-center text-sm font-medium tracking-wide text-white/80 sm:text-base"
+          className="max-w-xs text-center text-sm font-medium tracking-wide text-navy/80 sm:text-base"
         >
           {t("splash.tagline")}
         </motion.p>

@@ -34,9 +34,7 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
   }
 
   return (
-    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-navy">
-      <div aria-hidden className="absolute inset-0 hero-video-bg opacity-80" />
-      <div aria-hidden className="absolute inset-0 bg-black/50" />
+    <div className="relative flex min-h-dvh flex-col overflow-hidden bg-white">
 
       <div className="relative z-10 flex flex-1 flex-col px-6 pb-10 pt-14">
         <div className="flex justify-end">
@@ -44,7 +42,7 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
             variant="ghost"
             size="sm"
             onClick={onComplete}
-            className="text-white/70 hover:bg-white/10 hover:text-white"
+            className="text-navy/70 hover:bg-black/5 hover:text-navy"
           >
             {t("onboard.skip")}
           </Button>
@@ -60,15 +58,15 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
               transition={{ duration: 0.35, ease: "easeOut" }}
               className="flex max-w-sm flex-col items-center gap-8 text-center"
             >
-              <div className="flex size-20 items-center justify-center rounded-2xl border border-white/15 bg-white/10 backdrop-blur-sm">
+              <div className="flex size-20 items-center justify-center rounded-2xl border border-black/10 bg-black/5 backdrop-blur-sm">
                 <Icon className="size-10 text-cyan" strokeWidth={1.5} />
               </div>
 
               <div className="space-y-3">
-                <h2 className="text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                <h2 className="text-2xl font-semibold tracking-tight text-navy sm:text-3xl">
                   {t(slide.titleKey as TranslationKey)}
                 </h2>
-                <p className="text-pretty text-base leading-relaxed text-white/70">
+                <p className="text-pretty text-base leading-relaxed text-navy/70">
                   {t(slide.descKey as TranslationKey)}
                 </p>
               </div>
@@ -85,7 +83,7 @@ export function OnboardingFlow({ onComplete }: OnboardingFlowProps) {
                 aria-label={`Slide ${i + 1}`}
                 onClick={() => setStep(i)}
                 className={`h-1.5 rounded-full transition-all ${
-                  i === step ? "w-8 bg-cyan" : "w-1.5 bg-white/30"
+                  i === step ? "w-8 bg-cyan" : "w-1.5 bg-black/20"
                 }`}
               />
             ))}
