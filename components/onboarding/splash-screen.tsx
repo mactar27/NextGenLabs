@@ -22,9 +22,9 @@ export function SplashScreen() {
           <Image
             src="/images/nextgen-labs-logo.png"
             alt="NextGen Labs"
-            width={200}
-            height={200}
-            className="h-28 w-auto object-contain sm:h-36"
+            width={600}
+            height={600}
+            className="h-[336px] w-auto object-contain sm:h-[432px]"
             priority
           />
         </motion.div>
