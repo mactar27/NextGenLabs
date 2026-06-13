@@ -11,7 +11,7 @@ const fr = {
   "nav.cta": "Démarrer un projet",
 
   // Hero
-  "hero.badge": "Startup technologique sénégalaise",
+  "hero.badge": "Agence Digitale",
   "hero.title": "Transformer les idées en solutions digitales",
   "hero.subtitle":
     "NextGen Labs accompagne les entreprises dans leur transformation digitale à travers le développement web, les applications mobiles, l'intelligence artificielle et des solutions logicielles innovantes.",
@@ -130,7 +130,7 @@ const fr = {
   "onboard.start": "Commencer",
   "onboard.slide1.title": "Bienvenue chez NextGen Labs",
   "onboard.slide1.desc":
-    "Startup technologique sénégalaise, nous accompagnons les entreprises dans leur transformation digitale.",
+    "Nous accompagnons les entreprises dans leur transformation digitale.",
   "onboard.slide2.title": "Des solutions sur mesure",
   "onboard.slide2.desc":
     "Développement web, applications mobiles, intelligence artificielle et design UI/UX adaptés à vos besoins.",
@@ -148,7 +148,7 @@ const en: Record<keyof typeof fr, string> = {
   "nav.contact": "Contact",
   "nav.cta": "Start a project",
 
-  "hero.badge": "Senegalese technology startup",
+  "hero.badge": "Digital Agency",
   "hero.title": "Transforming ideas into digital solutions",
   "hero.subtitle":
     "NextGen Labs helps businesses accelerate their digital transformation through web development, mobile applications, artificial intelligence, and innovative software solutions.",
@@ -256,7 +256,7 @@ const en: Record<keyof typeof fr, string> = {
   "onboard.start": "Get started",
   "onboard.slide1.title": "Welcome to NextGen Labs",
   "onboard.slide1.desc":
-    "A Senegalese technology startup helping businesses accelerate their digital transformation.",
+    "Helping businesses accelerate their digital transformation.",
   "onboard.slide2.title": "Tailored solutions",
   "onboard.slide2.desc":
     "Web development, mobile apps, artificial intelligence, and UI/UX design built for your needs.",
