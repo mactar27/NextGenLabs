@@ -13,6 +13,7 @@
     "@ai-sdk/openai": "^3.0.68",
     "@ai-sdk/react": "^3.0.199",
     "@base-ui/react": "^1.5.0",
+    "@ducanh2912/next-pwa": "^10.2.9",
     "@vercel/analytics": "1.6.1",
     "ai": "^6.0.197",
     "class-variance-authority": "^0.7.1",

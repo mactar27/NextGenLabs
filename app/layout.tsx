@@ -45,6 +45,13 @@ export const metadata: Metadata = {
     title: 'NextGen Labs',
     description: 'Transforming Ideas Into Digital Solutions.',
   },
+  manifest: '/manifest.json',
+  themeColor: '#14B8D4',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'default',
+    title: 'NextGen Labs',
+  },
   icons: {
     icon: '/images/nextgen-labs-logo.png',
     shortcut: '/images/nextgen-labs-logo.png',

@@ -1,0 +1,28 @@
+{
+  "name": "NextGen Labs",
+  "short_name": "NextGen Labs",
+  "description": "Agence digitale sénégalaise spécialisée en développement web, mobile, et Intelligence Artificielle.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#031B4E",
+  "theme_color": "#14B8D4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/nextgen-labs-logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/nextgen-labs-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity", "technology"],
+  "lang": "fr",
+  "dir": "ltr",
+  "scope": "/"
+}
