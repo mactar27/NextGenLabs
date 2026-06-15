@@ -1,4 +1,5 @@
 import { HeroSection } from "@/components/home/hero-section"
+import { TechMarquee } from "@/components/home/tech-marquee"
 
 import { OverviewSection } from "@/components/home/overview-section"
 import { ServicesGrid } from "@/components/services-grid"
@@ -9,6 +10,7 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <TechMarquee />
 
       <OverviewSection />
       <ServicesGrid />

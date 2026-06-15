@@ -7,7 +7,7 @@ import { motion, AnimatePresence } from "motion/react"
 import { Menu, X, Sun, Moon, Languages } from "lucide-react"
 import { Logo } from "@/components/logo"
 import { Button } from "@/components/ui/button"
-import { useTheme } from "@/components/providers/theme-provider"
+import { useTheme } from "next-themes"
 import { useLanguage } from "@/components/providers/language-provider"
 import type { TranslationKey } from "@/lib/i18n"
 
@@ -21,12 +21,14 @@ const links: { href: string; key: TranslationKey }[] = [
 
 export function Navbar() {
   const pathname = usePathname()
-  const { theme, toggleTheme } = useTheme()
+  const { theme, setTheme, resolvedTheme } = useTheme()
   const { lang, setLang, t } = useLanguage()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const onScroll = () => setScrolled(window.scrollY > 8)
     onScroll()
     window.addEventListener("scroll", onScroll)
@@ -77,11 +79,11 @@ export function Navbar() {
             <span className="uppercase">{lang}</span>
           </button>
           <button
-            onClick={toggleTheme}
+            onClick={() => setTheme(resolvedTheme === "dark" ? "light" : "dark")}
             className="rounded-lg p-2 text-muted-foreground transition-colors hover:text-foreground"
             aria-label="Toggle theme"
           >
-            {theme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
+            {mounted && resolvedTheme === "dark" ? <Sun className="size-4" /> : <Moon className="size-4" />}
           </button>
             <Link href="/contact" className="hidden sm:inline-flex rounded-xl bg-navy px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-navy/90">
               {t("nav.cta")}

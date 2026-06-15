@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
+import Image from "next/image"
 import { motion, AnimatePresence } from "motion/react"
 import { Bot, X, Send, Sparkles, ChevronRight } from "lucide-react"
 import { company } from "@/lib/site"
@@ -15,10 +16,13 @@ const SUGGESTIONS = [
 ]
 
 function getMessageText(message: UIMessage): string {
-  return message.parts
-    .filter(isTextUIPart)
-    .map((part) => part.text)
-    .join("")
+  if (message.parts) {
+    return message.parts
+      .filter(isTextUIPart)
+      .map((part) => part.text)
+      .join("")
+  }
+  return (message as any).content || (message as any).text || ""
 }
 
 /* ─── Message bubble ─────────────────────────────────────── */
@@ -38,8 +42,8 @@ function Bubble({ message }: { message: UIMessage }) {
       className={`flex gap-2 ${isBot ? "items-start" : "items-end flex-row-reverse"}`}
     >
       {isBot && (
-        <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full bg-cyan/20 text-cyan">
-          <Bot className="size-4" />
+        <span className="mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full">
+          <Image src="/images/nexy-avatar.png" alt="Nexy" width={28} height={28} className="size-full rounded-full object-cover shadow-sm ring-1 ring-border" />
         </span>
       )}
       <div
@@ -70,7 +74,7 @@ export function Chatbot() {
         parts: [
           {
             type: "text",
-            text: "Bonjour 👋 Je suis l'assistant de **NextGen Labs**. Comment puis-je vous aider ?",
+            text: "Bonjour 👋 Je suis **Nexy**, l'assistant IA de NextGen Labs. Comment puis-je vous aider ?",
           },
         ],
       },
@@ -118,12 +122,12 @@ export function Chatbot() {
             style={{ maxHeight: "min(560px, 80vh)" }}
           >
             <div className="flex items-center gap-3 bg-navy px-4 py-3.5">
-              <span className="relative flex size-9 items-center justify-center rounded-full bg-cyan/20">
-                <Bot className="size-5 text-cyan" />
+              <span className="relative flex size-9 items-center justify-center rounded-full">
+                <Image src="/images/nexy-avatar.png" alt="Nexy" width={36} height={36} className="size-full rounded-full object-cover shadow-sm ring-1 ring-white/10" />
                 <span className="absolute -right-0.5 -top-0.5 size-2.5 rounded-full bg-emerald-400 ring-2 ring-navy" />
               </span>
               <div className="min-w-0 flex-1">
-                <p className="text-sm font-semibold leading-tight text-white">Assistant NextGen Labs</p>
+                <p className="text-sm font-semibold leading-tight text-white">Nexy</p>
                 <p className="flex items-center gap-1 text-xs text-white/60">
                   <span className="inline-block size-1.5 rounded-full bg-emerald-400" />
                   En ligne
@@ -152,8 +156,8 @@ export function Chatbot() {
                     exit={{ opacity: 0 }}
                     className="flex items-center gap-2"
                   >
-                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-cyan/20 text-cyan">
-                      <Bot className="size-4" />
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-full">
+                      <Image src="/images/nexy-avatar.png" alt="Nexy" width={28} height={28} className="size-full rounded-full object-cover shadow-sm ring-1 ring-border" />
                     </span>
                     <span className="flex gap-1 rounded-2xl rounded-tl-sm border border-border bg-card px-4 py-3">
                       {[0, 1, 2].map((i) => (
@@ -264,8 +268,9 @@ export function Chatbot() {
               animate={{ rotate: 0, opacity: 1 }}
               exit={{ rotate: -90, opacity: 0 }}
               transition={{ duration: 0.15 }}
+              className="size-full rounded-full p-[2px]"
             >
-              <Sparkles className="size-6" />
+              <Image src="/images/nexy-avatar.png" alt="Nexy" width={56} height={56} className="size-full rounded-full object-cover" priority />
             </motion.span>
           )}
         </AnimatePresence>

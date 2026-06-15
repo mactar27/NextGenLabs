@@ -1,10 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { useLanguage } from "@/components/providers/language-provider";
+import type { TranslationKey } from "@/lib/i18n";
 
 // Placeholder decorative network animation component
 function NetworkBackground() {
@@ -66,13 +67,13 @@ export function HeroSection() {
             className="text-4xl font-extrabold tracking-tight text-primary sm:text-5xl lg:text-6xl"
             style={{ color: "#031B4E" }}
           >
-            {t("hero.headline") || "Transforming Ideas Into Digital Solutions"}
+            {t("hero.headline" as TranslationKey) || "Transforming Ideas Into Digital Solutions"}
           </motion.h1>
           <motion.p
             variants={item}
             className="mt-6 max-w-3xl text-lg text-muted-foreground"
           >
-            {t("hero.subtitle") ||
+            {t("hero.subtitle" as TranslationKey) ||
               "NextGen Labs helps businesses accelerate their digital transformation through web development, mobile applications, artificial intelligence, and innovative software solutions."}
           </motion.p>
 
@@ -82,14 +83,14 @@ export function HeroSection() {
               className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-primary/90"
               style={{ backgroundColor: "#031B4E" }}
             >
-              {t("hero.cta.start") || "Start Your Project"}
+              {t("hero.cta.start" as TranslationKey) || "Start Your Project"}
             </Link>
             <Link
               href="/services"
               className="inline-flex items-center rounded-lg border border-primary bg-white px-6 py-3 text-sm font-medium text-primary transition-colors hover:bg-primary/5"
               style={{ color: "#031B4E", borderColor: "#031B4E" }}
             >
-              {t("hero.cta.discover") || "Discover Our Services"}
+              {t("hero.cta.discover" as TranslationKey) || "Discover Our Services"}
               <ArrowRight className="ml-2 size-4" />
             </Link>
           </motion.div>
